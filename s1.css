@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body
+{
+  background-color: #2a292a;
+  font-family: 'Press Start 2P';
+}
+header {
+    
+    border: 6px solid #000;
+    margin-left: 141px;
+    width: 82%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: #f3202b;
+    color:#fff;
+    
+}
+.tagline {
+    margin-top: 30px;
+    margin: 60px 0;
+    font-size: 16px;
+}
+.upload-section {
+  border: 4px solid #0c0d0d;
+  background-color: #000;
+ 
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.upload-area {
+  border: 4px solid #dd030e;
+  /* background-color: #090808; */
+  background: linear-gradient(to bottom, #171717, #333);
+  box-shadow: 0 0 15px #03ddc0 inset, 0 0 20px #25cad6;
+  color: white;
+  padding: 282px;
+  margin-left: 324px;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 278px;
+  margin-top: 123px;
+  margin-bottom: 85.2px;
+  cursor: pointer;
+}
+.tool-panel {
+  margin-bottom: -204px;
+  margin-left: 206PX;
+  
+}
+
+
+.arcade-btn {
+  background: #2a292a;
+  color: #fff;
+  font-size: 10px;
+  padding: 25px;
+  margin-top: 200px;
+  border: 3px solid #2a292a;
+  cursor: pointer;
+  text-shadow: 2px 2px #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border-radius: 55px;
+}
+.arcade-btn:hover {
+  background: #0ff;
+  color: #000;
+}
+
+.arcade-btn img {
+  position: relative;
+  opacity: 1;
+  width: 219px;
+  height: 104px;
+}
+
+
+
+  
