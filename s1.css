@@ -1,67 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body
-{
-  background-color: #2a292a;
+body {
+  background-color: #1A0033;
   font-family: 'Press Start 2P';
+  color: #FFFFFF; 
 }
+
 header {
-    
-    border: 6px solid #000;
-    margin-left: 141px;
-    width: 82%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    background: #f3202b;
-    color:#fff;
-    
+  border: 4px solid #00ABFF; 
+  margin-left: 0px;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  background: #B71212;; 
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 120px;
 }
+
+header .logo {
+  width: 60px; 
+  height: 60px;
+  margin-right: 15px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-family: 'Press Start 2P', cursive;
+  color: #FFFFFF;
+}
+
 .tagline {
-    margin-top: 30px;
-    margin: 60px 0;
-    font-size: 16px;
+  margin-top: 30px;
+  margin: 60px 0;
+  font-size: 16px;
+  color: #00FFFF; 
 }
+
 .upload-section {
-  border: 4px solid #0c0d0d;
-  background-color: #000;
- 
+  border: 4px solid #00ABFF; 
+  background-color: #050505; 
   padding: 20px;
   margin-bottom: 20px;
-  margin-top: 10px;
-}
-.upload-area {
-  border: 4px solid #dd030e;
-  /* background-color: #090808; */
-  background: linear-gradient(to bottom, #171717, #333);
-  box-shadow: 0 0 15px #03ddc0 inset, 0 0 20px #25cad6;
-  color: white;
-  padding: 282px;
-  margin-left: 324px;
-  text-align: center;
-  font-size: 14px;
-  margin-right: 278px;
-  margin-top: 123px;
-  margin-bottom: 85.2px;
-  cursor: pointer;
-}
-.tool-panel {
-  margin-bottom: -204px;
-  margin-left: 206PX;
+  margin-top: 0px;
+  box-shadow: 0 0 7px #00FFFF inset, 0 0 20px #FF007F;
   
 }
 
+.upload-area {
+  /* border: 6px dashed #FFC231; */
+  border: 4px dashed #319EFF;
+  /* border: 6px dashed #FF3131;  */
+  background: linear-gradient(to bottom, #171717, #333);
+  box-shadow: 0 0 9px #00ABFF inset, 0 0 20px #B71212;
+  color: white;
+  padding: 136px;
+  margin-left: 385px;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 313px;
+  margin-top: 90px;
+  margin-bottom: 83.2px;
+  cursor: pointer;
+  border-radius: 125px;
+}
+
+.tools {
+  /* border: 4px solid #FFD700;  */
+  background-color: #050505; 
+  height: 124px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: -22px;
+  border: 4px solid #00ABFF; 
+}
+
+.tool-panel {
+  margin-bottom: -204px;
+  margin-left: 206px;
+}
 
 .arcade-btn {
-  background: #2a292a;
-  color: #fff;
-  font-size: 10px;
+  background: #000000; 
+  color: #FFFFFF;
+  font-size: 13px;
   padding: 25px;
-  margin-top: 200px;
-  border: 3px solid #2a292a;
+  margin-top: -70px;
+  font-family: 'Press Start 2P';
+  border: 3px dotted #FFD700; 
   cursor: pointer;
   text-shadow: 2px 2px #000;
   display: inline-flex;
@@ -70,9 +100,12 @@ header {
   gap: 10px;
   transition: all 0.3s ease;
   border-radius: 55px;
+  margin-left: 44px;
+  box-shadow: 0 0 0 2px #FF3131;
 }
+
 .arcade-btn:hover {
-  background: #0ff;
+  background: #FF007F;
   color: #000;
 }
 
@@ -83,6 +116,23 @@ header {
   height: 104px;
 }
 
+.footer {
+  background-color: #0D0221; 
+  border-top: 4px solid #00ABFF; 
+  padding: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 200px;
+  box-shadow: 0 0 15px #00FFFF inset, 0 0 20px #FF007F;
+}
 
+.footer a {
+  color: #FFF; 
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+}
 
-  
+.footer a:hover {
+  color: #FF007F; 
+}

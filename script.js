@@ -1,20 +1,34 @@
 
-const dropArea = document.getElementById("drop-area");
-const fileInput = document.getElementById("fileInput");
+document.addEventListener("DOMContentLoaded", function () {
+  const uploadArea = document.querySelector(".upload-area");
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.style.display = "none";
+  document.body.appendChild(fileInput);
 
-dropArea.addEventListener("click", () => fileInput.click());
-dropArea.addEventListener("dragover", (event) => {
+  uploadArea.addEventListener("click", function () {
+    fileInput.click();
+  });
+
+  uploadArea.addEventListener("dragover", function (event) {
     event.preventDefault();
-    dropArea.style.background = "rgba(255, 0, 0, 0.5)";
-});
-dropArea.addEventListener("dragleave", () => {
-    dropArea.style.background = "#222";
-});
-dropArea.addEventListener("drop", (event) => {
+    uploadArea.style.borderColor = "#FFD700";
+  });
+
+  uploadArea.addEventListener("dragleave", function () {
+    uploadArea.style.borderColor = "#FF3131";
+  });
+
+  uploadArea.addEventListener("drop", function (event) {
     event.preventDefault();
-    dropArea.style.background = "#222";
+    uploadArea.style.borderColor = "#FF3131";
     const files = event.dataTransfer.files;
-    if (files.length) {
-        alert(`File uploaded: ${files[0].name}`);
+    alert("File uploaded: " + files[0].name);
+  });
+
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
+      alert("File uploaded: " + fileInput.files[0].name);
     }
+  });
 });
