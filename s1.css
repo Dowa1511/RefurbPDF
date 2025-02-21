@@ -48,26 +48,69 @@ header h1 {
   margin-bottom: 20px;
   margin-top: 0px;
   box-shadow: 0 0 7px #00FFFF inset, 0 0 20px #FF007F;
-  
 }
 
 .upload-area {
-  /* border: 6px dashed #FFC231; */
   border: 4px dashed #319EFF;
-  /* border: 6px dashed #FF3131;  */
   background: linear-gradient(to bottom, #171717, #333);
   box-shadow: 0 0 9px #00ABFF inset, 0 0 20px #B71212;
   color: white;
   padding: 136px;
-  margin-left: 385px;
+  margin: 90px auto;
   text-align: center;
   font-size: 14px;
-  margin-right: 313px;
-  margin-top: 90px;
-  margin-bottom: 83.2px;
-  cursor: pointer;
+  width: 50%;
   border-radius: 125px;
+  cursor: pointer;
+  position: relative;
 }
+
+.upload-area input {
+  display: none;
+}
+
+
+.tool-panel {
+  position: relative;
+  top: 50%;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.tool-panel.left {
+  left: 217px;
+  top: -479px;
+}
+
+
+.tool-panel.right {
+  right: -1201px;
+  top: -820px;
+}
+
+.tool-btn {
+  background: #AC0B0B85;
+  color: white;
+  padding: 13px;
+  border: 3px solid #FF007F;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00FFFF inset, 0 0 15px #FF007F;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 102px;
+  border-radius: 15px;
+}
+
+
+.tool-btn:hover {
+  background: #FF007F;
+  box-shadow: 0 0 15px #00FFFF inset, 0 0 20px #FF007F;
+}
+
 
 .tools {
   /* border: 4px solid #FFD700;  */
@@ -75,11 +118,11 @@ header h1 {
   height: 124px;
   padding: 20px;
   margin-bottom: 20px;
-  margin-top: -22px;
+  margin-top: -665px;
   border: 4px solid #00ABFF; 
 }
 
-.tool-panel {
+.tp {
   margin-bottom: -204px;
   margin-left: 206px;
 }

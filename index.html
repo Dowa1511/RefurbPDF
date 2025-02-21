@@ -15,14 +15,34 @@
     
 
     <div class="upload-section">
-        
         <div class="upload-area" id="uploadArea">
             <p>Drag & Drop PDF Here <br> <br> or <br><br>Click to Upload</p>
-            <input type="file" id="fileInput" accept="application/pdf" hidden>
+            <input type="file" id="fileInput" accept="application/pdf">
         </div>
     </div>
+    
+    <!-- Left Side Buttons -->
+    <div class="tool-panel left">
+        <div class="tool-btn" onclick="rotatePDF()">Rotate</div>
+        <div class="tool-btn" onclick="cropPDF()">Crop</div>
+        <div class="tool-btn" onclick="mergePDF()">Merge</div>
+        <div class="tool-btn" onclick="splitPDF()">Split</div>
+        <div class="tool-btn" onclick="compressPDF()">Compress</div>
+    </div>
+    
+    <!-- Right Side Buttons -->
+    <div class="tool-panel right">
+        <div class="tool-btn" onclick="extractText()">Extract Text</div>
+        <div class="tool-btn" onclick="addWatermark()">Watermark</div>
+        <div class="tool-btn" onclick="convertToWord()">Convert to Word</div>
+        <div class="tool-btn" onclick="convertToImage()">Convert to Image</div>
+        <div class="tool-btn" onclick="performOCR()">OCR (Scan Text)</div>
+        
+    </div>
+    
+
     <div class="tools">
-        <div class="tool-panel">
+        <div class="tp">
             <button class="arcade-btn" id="upload-btn"><img src="cslot1.png" alt="Insert File"> </button>
             <button class="arcade-btn">▶️ Continue <br><br>(Edit)</button>
             <button class="arcade-btn">💾 Save Progress <br><br> (Export)</button>

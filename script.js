@@ -32,3 +32,65 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+document.getElementById("uploadArea").addEventListener("click", function() {
+  document.getElementById("fileInput").click();
+});
+
+document.getElementById("uploadArea").addEventListener("dragover", function(event) {
+  event.preventDefault();
+  this.style.borderColor = "#FF007F";
+});
+
+document.getElementById("uploadArea").addEventListener("dragleave", function(event) {
+  this.style.borderColor = "#319EFF";
+});
+
+document.getElementById("uploadArea").addEventListener("drop", function(event) {
+  event.preventDefault();
+  this.style.borderColor = "#319EFF";
+  let files = event.dataTransfer.files;
+  if (files.length > 0) {
+      alert("PDF Uploaded: " + files[0].name);
+  }
+});
+
+function rotatePDF() {
+  alert("Rotate feature coming soon!");
+}
+
+function cropPDF() {
+  alert("Crop feature coming soon!");
+}
+
+function mergePDF() {
+  alert("Merge feature coming soon!");
+}
+
+function splitPDF() {
+  alert("Split feature coming soon!");
+}
+
+function compressPDF() {
+  alert("Compress feature coming soon!");
+}
+
+function extractText() {
+  alert("Extract text feature coming soon!");
+}
+
+function addWatermark() {
+  alert("Watermark feature coming soon!");
+}
+
+function convertToWord() {
+  alert("Convert to Word feature coming soon!");
+}
+
+function convertToImage() {
+  alert("Convert to Image feature coming soon!");
+}
+
+function performOCR() {
+  alert("OCR (Extract text from scanned PDFs) feature coming soon!");
+}
+

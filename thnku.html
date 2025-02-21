@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            font-family: 'Press Start 2P', cursive;
+            color: #00FFCC;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .popup {
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            border: 4px solid #FF007F;
+            background: linear-gradient(to bottom, #111, #222);
+            box-shadow: 0 0 15px #00FFFF inset, 0 0 20px #FF007F;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #FF007F;
+            text-shadow: 3px 3px #00FFFF;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #222;
+            border: 3px solid #00FFCC;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, #00FFCC, #FF007F);
+            position: absolute;
+            transition: width 2s ease-in-out;
+        }
+
+        .download-status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #FFD700;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px;
+            background: #FF007F;
+            color: white;
+            border: 3px dashed #00FFCC;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 0 15px #00FFFF inset, 0 0 20px #FF007F;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #00FFCC;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup">
+        <h1>Thank You!</h1>
+        <p>Your PDF is being downloaded...</p>
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+        <p class="download-status" id="downloadStatus">Preparing your file...</p>
+
+        <p>Thank you so much for using <strong>RefurbPDF</strong>. We hope you had a great experience!</p>
+
+        <p>
+            If you enjoyed using our tool, consider sharing it with your friends and colleagues!  
+            Your support helps us continue improving and adding exciting new features.
+        </p>
+
+        <p>
+            **Need help? Have suggestions?** <br> 
+            Contact us anytime at:  <br>
+            📩 Email: <strong>support@refurbpdf.com</strong>  <br>
+            💬 WhatsApp: <a href="https://wa.me/1234567890" target="_blank" style="color: #00FFCC;">Chat with us</a>  
+        </p>
+
+        <a href="index.html" class="button" >Close</a>
+    </div>
+
+
+</body>
+</html>
