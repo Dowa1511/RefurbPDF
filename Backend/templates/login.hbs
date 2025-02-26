@@ -11,17 +11,56 @@
     
 
     <h2>Login</h2>
+<form id="loginForm" action="/login" method="post" onsubmit="console.log('Login form submitted');">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+</form>
 
-    <form action="/login" method="post">
-    
-    <input type="text" name="name" placeholder="Name">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit">
-    
-    </form>
 
     <a href="/signup">Create new Account</a>
 
 
 </body>
+<script>
+    document.querySelector("form").addEventListener("submit", async function (event) {
+        event.preventDefault(); 
+
+        const formData = new FormData(this);
+        const response = await fetch("/login", {
+            method: "POST",
+            body: formData,
+        });
+
+        if (response.ok) {
+            console.log("Login successful! Redirecting...");
+            window.location.href = "/index.html";  
+        } else {
+            console.error("Login failed.");
+            alert("Invalid login details.");
+        }
+    });
+</script>
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (event) => {
+    event.preventDefault(); 
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+
+    const response = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, password }),
+    });
+
+    if (response.redirected) {
+        window.location.href = response.url; 
+    } else {
+        const text = await response.text();
+        alert(text); 
+    }
+});
+</script>
+
+
 </html>

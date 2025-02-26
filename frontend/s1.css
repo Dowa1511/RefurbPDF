@@ -208,3 +208,19 @@ header h1 {
   background: #00ffcc;
   box-shadow: 0 0 10px #00ffcc;
 }
+.profile-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #00ffcc;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-btn:hover {
+  background: #ff00ff;
+  color: white;
+}

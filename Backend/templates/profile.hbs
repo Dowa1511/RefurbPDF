@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>👤 Welcome, {{user.name}}</h1>
+        <p>Email: {{user.email}}</p>
+
+        <h2>📂 Uploaded PDFs</h2>
+        <ul>
+            {{#each pdfs}}
+                <li>
+                    <a href="{{this.filePath}}" target="_blank">{{this.fileName}}</a>
+                    <button onclick="deletePDF('{{this._id}}')">🗑️ Delete</button>
+                </li>
+            {{/each}}
+        </ul>
+
+        <a href="/logout" class="logout-btn">🚪 Logout</a>
+    </div>
+
+    <script>
+        function deletePDF(pdfId) {
+            fetch(`/delete-pdf/${pdfId}`, { method: "DELETE" })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert("Error deleting file");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
