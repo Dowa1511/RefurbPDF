@@ -9,6 +9,6 @@ userRoutes.post('/register',addUser);
 userRoutes.get('/users',getAllUsers)
 userRoutes.post("/login", loginUser);
 userRoutes.get('/logout',logoutUser)
-userRoutes.post('/uploads',upload.single("file"),uploadFile)
+userRoutes.post('/upload',upload.single("file"),uploadFile)
 
 export default userRoutes;
