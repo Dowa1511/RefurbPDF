@@ -8,17 +8,11 @@ const collection = require("./mongodb");
 const pdfCollection = require("./pdfModel");
 const cors = require("cors");
 const { truncate } = require("fs");
+const templatePath = path.join(__dirname, '../templates');
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
-
-
-
-const templatePath = path.join(__dirname, '../templates');
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-
+app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
     secret: "your_secret_key", 
@@ -26,6 +20,11 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false } 
 }));
+
+
+
+
+
 
 app.set("view engine", "hbs");
 app.set("views", templatePath);
@@ -49,22 +48,34 @@ app.get("/signup", (req, res) => {
 app.post("/login", async (req, res) => {
     try {
         console.log("Login request received:", req.body);
-        const check = await collection.findOne({ name: req.body.name });
 
-        if (check) {
-            console.log("User found:", check.name);
-        } else {
-            console.log("User not found.");
+        const { name, password } = req.body;
+        if (!name || !password) {
+            return res.status(400).send("Name and Password are required!");
         }
 
-        if (check && check.password === req.body.password) {
-            console.log("Login successful for:", check.name);
-            req.session.user = check;
+        const user = await collection.findOne({ name });
 
-            return res.redirect("/index.html");  
+        if (!user) {
+            console.log("User not found.");
+            return res.status(400).send("Invalid Credentials");
+        }
+
+        if (user.password === password) {
+            console.log("Login successful for:", user.name);
+            req.session.user = { _id: user._id, name: user.name, email: user.email };
+
+           
+            req.session.save((err) => {
+                if (err) {
+                    console.error("Session save error:", err);
+                    return res.status(500).send("Session error");
+                }
+                res.redirect("/profile");  
+            });
         } else {
-            console.log("Invalid password attempt for:", req.body.name);
-            return res.send("Invalid Password");
+            console.log("Invalid password attempt for:", name);
+            return res.status(400).send("Invalid Credentials");
         }
     } catch (error) {
         console.error("Error in login:", error);
@@ -75,6 +86,12 @@ app.post("/login", async (req, res) => {
 
 
 
+const isAuthenticated = (req, res, next) => {
+    if (!req.session.user) {
+        return res.redirect("/login"); 
+    }
+    next();
+};
 app.post("/signup", async (req, res) => {
     try {
         console.log("Received Data:", req.body);
@@ -107,29 +124,27 @@ app.post("/signup", async (req, res) => {
 });
 
 
-const isAuthenticated = (req, res, next) => {
-    if (!req.session.user) {
-        return res.redirect("/login"); 
-    }
-    next();
-};
+
 
 
 app.get("/profile", async (req, res) => {
     console.log("Session Data:", req.session.user);  
+
     if (!req.session.user) {
-        return res.json({ loggedIn: false });
+        return res.redirect("/login");  
     }
 
     try {
         const user = req.session.user;
         const pdfs = await pdfCollection.find({ userId: user._id });
-        res.json({ loggedIn: true });
+
+        res.render("profile", { user, pdfs }); 
     } catch (error) {
         console.error("Error loading profile:", error);
         res.status(500).send("Error loading profile");
     }
 });
+
 
 
 
@@ -153,4 +168,8 @@ app.delete("/delete-pdf/:id", async (req, res) => {
 
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
+});
+app.post("/test", (req, res) => {
+    console.log("Test request received:", req.body);
+    res.json({ receivedBody: req.body });
 });

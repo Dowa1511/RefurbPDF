@@ -29,9 +29,10 @@ header .logo {
 }
 
 header h1 {
-  font-size: 28px;
+  font-size: 44px;
   font-family: 'Press Start 2P', cursive;
   color: #FFFFFF;
+  position: absolute;
 }
 
 .tagline {
@@ -209,18 +210,38 @@ header h1 {
   box-shadow: 0 0 10px #00ffcc;
 }
 .profile-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  background: #00ffcc;
+  position: relative;
+  top: 124px;
+  right: 18px;
+  padding: 8px 15px;
+  background: #afd2e3c9;;
   color: black;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 23px;
+  border-radius: 18px;
 }
 
 .profile-btn:hover {
-  background: #ff00ff;
+  background: #00abffde;
+  color: white;
+}
+.login-btn {
+  position: relative;
+  top: 123px;
+  right: 80px;
+  padding: 14px 15px;
+  background: #afd2e3c9;;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 19px;
+  border-radius: 18px;
+}
+
+.login-btn:hover {
+  background: #00abffde;
   color: white;
 }
