@@ -10,13 +10,14 @@ import dotenv from "dotenv";
 // Import your User model
 import User from "./Models/userModel.js";
 import File from "./Models/fileModel.js"
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config(); 
 
 //const express = require("express");
 //const cors = require("cors");
 //const helmet = require("helmet")
-//require("dotenv").config();
+//require("dotenv").config(); 
 
 
 
@@ -37,16 +38,21 @@ app.get("/", (req, res) => {
 }); 
 
 //api to fetch user upload
-app.get("/uploads", async (req, res) => {
-  try {
-    // req.user is set by verifyToken; assume it contains a `userId`
-    const userUploads = await File.find({ userId: req.user.userId });
-    res.json({ files: userUploads });
-  } catch (error) {
-    console.error("Error fetching uploads:", error);
-    res.status(500).json({ message: "Server error" });
-  }
-});
+// app.get("/uploads", async (req, res) => {
+//   try {
+//     // req.user is set by verifyToken; assume it contains a `userId`
+//     console.log(req.user)
+//     const userUploads = await File.find({ userId: req.user.userId });
+//     res.json({ files: userUploads });
+//   } catch (error) {
+//     console.error("Error fetching uploads:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+ 
+// api end-points 
+app.use('/api/file',userRoutes)
+app.use('/api/user',userRoutes)
 
  
 // Start Server 
