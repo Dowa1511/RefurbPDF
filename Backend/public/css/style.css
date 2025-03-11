@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    background-color: #000;
-    color: #00ffcc;
+    justify-content: center;
+    color: #fff;
+    background-color: #0A101A;
+    background-size: 20px 20px;
+    background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     padding: 50px;
@@ -10,18 +13,23 @@ body {
 
 h2 {
     font-size: 36px;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    text-shadow: 0 0 5px #111827, 0 0 10px #111827;
 }
 
 form {
-    display: inline-block;
-    background: #111;
+    /* display: inline-block;
+    background: #00060e;
     padding: 20px;
-    border: 5px solid #ff00ff;
-    box-shadow: 0 0 24px #ff00ff;
+    border: 5px solid #545E6F;
     border-radius: 10px;
     height: 335px;
-    width: 449px;
+    width: 449px; */
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #545E6F;
+    text-align: center;
+    height: 328px;
   }
 
 input[type="text"],
@@ -29,9 +37,9 @@ input[type="password"] {
     width: 96%;
     height: 79px;
     margin: 10px 0;
-    background: #222;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
+    background: #111827;
+    border: 1px solid #3B82F6;
+    color: #dbeae7;
     font-size: 16px;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
@@ -40,7 +48,7 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-    background: #ff00ff;
+    background: #111827;
     border: none;
     color: #fff;
     padding: 18px;
@@ -52,20 +60,31 @@ input[type="submit"] {
   }
 
 input[type="submit"]:hover {
-    background: #00ffcc;
-    box-shadow: 0 0 10px #00ffcc;
+    background: #3B82F6;;
+    box-shadow: 0 0 10px #3B82F6;;
 }
 
 a {
     display: block;
     margin-top: 20px;
-    color: #ff00ff;
+    color: #3B82F6;
     text-decoration: none;
-    text-shadow: 0 0 5px #ff00ff;
+    text-shadow: 0 0 5px #3B82F6;
     font-size: 20px;
 }
 
 a:hover {
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    color: #e4f3f0;
+    text-shadow: 0 0 10px #eff8f6;
+}
+.lgn{
+    background-color: #020712;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    border: 1px solid #3B82F6;
+    margin-left: 32%;
 }

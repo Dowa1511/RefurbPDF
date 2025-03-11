@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate PDF</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=picture_as_pdf" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+        }
+
+        body {
+            justify-content: center;
+            color: #fff;
+            background-color: #0A101A;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px;
+            background-color: #131B2E;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 19px;
+        }
+
+        .btn {
+            color: white;
+            text-decoration: none;
+            margin: 3px;
+            border-radius: 5px;
+            background: rgba(37, 99, 235, 1);
+            font-size: 13px;
+            height: 42px;
+            padding: 1px 12px;
+        }
+
+        .btn:hover {
+            background-color: #0a0f1a;
+        }
+
+        .login {
+            background-color: #2176FF;
+        }
+
+        .signup {
+            background-color: #3B82F6;
+        }
+
+        .logo img {
+            width: 77px;
+            height: 71px;
+            margin-right: 36px;
+        }
+
+        .container {
+            background-color: #131B2E;
+            padding: 20px;
+            border-radius: 10px;
+            width: 87%;
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 7%;
+        }
+
+        .pdf-sect {
+            width: 76%;
+            background-color: #111827;
+            ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 463px;
+            border-radius: 5px;
+            border: 1px solid #3B82F680;
+        }
+
+        .pdf-preview {
+            width: 93%;
+            background-color: #1E293B;
+            border: 2px dashed #3B82F680;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 405px;
+            border-radius: 5px;
+        }
+
+        .rotate {
+            background-color: #111827;
+            color: white;
+            padding: 10px 20px;
+            margin: -6px;
+            margin-right: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 244px;
+            height: 88px;
+            border: 2px dashed #3B82F6;
+            font-size: 30px;
+            margin-top: 3px;
+
+        }
+        .rotate:hover{
+            background-color: #3B82F6;
+        }
+        .controls {
+            width: 23%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rotate-btns {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            margin-left: -11px;
+        }
+
+        .rotate-btns button {
+            background-color: rgba(217, 217, 217, 1);
+            border: none;
+            padding: 36px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            border: 2px dashed #111827;
+        }
+        .rotate-btns button:hover
+        {
+
+            background: #b8b7c225;
+
+        }
+
+        .apply-options {
+            margin-top: 6px;
+        }
+
+        .reset-btn {
+            margin-top: 15px;
+            padding:
+                10px;
+            width: 81%;
+            text-align: center;
+            border-radius:
+                5px;
+            cursor: pointer;
+            font-size: 31px;
+            color: #fff;
+            background-color: #131B2E;
+            border: 2px solid #6B9AE7 ;
+        }
+        .reset-btn:hover{
+            background: #52648f;
+        }
+        .save-btn:hover{
+            background: #52648f;
+        }
+        
+        .save-btn {
+            background-color: #6B9AE7;
+            margin-top: 15px;
+            padding:
+                10px;
+            width: 81%;
+            text-align: center;
+            border: 2px solid #6B9AE7 ;
+            cursor: pointer;
+            font-size: 31px;
+            color: #0A101A;
+            border-radius:
+                5px;
+            font-style: bold;
+        }
+        p{
+            color: #f9f9fb8a;
+            margin-top: 10%;
+            margin-left: -43%;
+        }
+        .fas fa-redo-alt{
+            font-size: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="logo.png" alt="" srcset=""></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <button class="btn login">Login</button>
+            <button class="btn signup">Sign Up</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="pdf-sect">
+            <div class="pdf-preview">
+                <i class="fas fa-file-alt" style="font-size: 100px; color: white;"></i>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="rotate">Rotate PDF</button>
+            <div class="rotate-btns">
+                <button><i class="fas fa-undo-alt fa-2x"></i></button>
+                <button><i class="fas fa-redo-alt fa-2x"></i></button>
+            </div>
+            
+            <p>Apply rotation to</p>
+            <div class="apply-options">
+                
+                <button class="btn">All Pages</button>
+                <button class="btn">Current Page</button>
+                <button class="btn">Custom</button>
+            </div>
+            <button class="save-btn">Save Changes</button>
+            <button class="reset-btn">Reset Changes</button>
+        </div>
+    </div>
+</body>
+
+</html>

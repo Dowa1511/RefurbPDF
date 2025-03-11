@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge PDF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+        }
+
+        body {
+            justify-content: center;
+            color: #fff;
+            background-color: #0A101A;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px;
+            background-color: #131B2E;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 22px;
+        }
+
+        .logo img {
+            width: 77px;
+            height: 71px;
+            margin-right: 36px;
+        }
+
+        .btn {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            background: rgba(37, 99, 235, 1);
+            font-size: 22px;
+        }
+
+        .btn:hover {
+            background-color: #0a0f1a;
+        }
+
+        .login {
+            background-color: #2176FF;
+        }
+
+        .signup {
+            background-color: #3B82F6;
+        }
+
+        .container {
+            background-color: #131B2E;
+            padding: 20px;
+            border-radius: 10px;
+            width: 87%;
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 7%;
+        }
+
+        .pdf-sect {
+            width: 76%;
+            background-color: #111827;
+            ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 463px;
+            border-radius: 5px;
+            border: 1px solid #3B82F680;
+        }
+
+        .pdf-preview {
+            width: 93%;
+            background-color: #1E293B;
+            border: 2px dashed #3B82F680;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 405px;
+            border-radius: 5px;
+        }
+
+        .pdf-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: -31%;
+            margin-left: -59%;
+        }
+
+        .pdf-icons i {
+            font-size: 80px;
+            color: white;
+            position: relative;
+        }
+
+        .controls {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .merge {
+            background-color: #111827;
+            color: white;
+            padding: 22px 60px;
+            margin: -6px;
+            margin-right: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 244px;
+            height: 88px;
+            border: 2px dashed #3B82F6;
+            font-size: 33px;
+            margin-top: 3px;
+
+
+        }
+
+        .merge:hover {
+            background-color: #3B82F6;
+        }
+
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .file-item {
+            background-color: grey;
+            padding:
+                19px;
+            border-radius:
+                5px;
+            width: 240px;
+            margin-left: -2%;
+        }
+
+        .file-item:hover {
+            background-color: #aeb0b4;
+        }
+
+        .merge-button {
+            background-color: #6B9AE7;
+            color: #0A101A;
+            padding:
+                17px;
+            border:
+                none;
+            border-radius:
+                5px;
+            cursor: pointer;
+            font-size: 42px;
+            width: 240px;
+            margin-left: -2%;
+            margin-top: 20%;
+        }
+
+        .merge-button:hover {
+            background: #52648f;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="logo.png" alt="" srcset=""></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <button class="btn login">Login</button>
+            <button class="btn signup">Sign Up</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="pdf-sect">
+            <div class="pdf-preview">
+
+                <div class="pdf-icons">
+                    <div>
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div>
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div>
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div>
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="badge"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="merge">Merge PDF</div>
+            <div class="file-list">
+                <div class="file-item"></div>
+                <div class="file-item"></div>
+                <div class="file-item"></div>
+                <div class="file-item"></div>
+            </div>
+            <button class="merge-button">Merge</button>
+        </div>
+    </div>
+</body>
+
+</html>

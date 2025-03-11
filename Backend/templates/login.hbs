@@ -3,48 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+            
+        }
+        body {
+            justify-content: center;
+            color: #fff;
+            background-color: #0A101A;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
+            }
 
-    <title>Document</title>
+        .login-container {
+    
+            padding: 36px;
+            border-radius: 10px;
+            text-align: center;
+            width: 376px;
+            margin-left: 11%;
+            margin-top: 54px;
+            }
+
+        .logo img {
+            height: 77px;
+            margin-bottom: 10px;
+            color: #2176FF;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 45px;
+            
+        }
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .social-btn {
+            background-color: #1E293B;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+           
+        }
+        .social-btn i {
+            font-size: 16px;
+            
+        }
+        .social-btn:hover{
+            background: #88878e;
+        }
+        .input-group {
+            margin-top: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #4d4c52;
+            background-color: #141921;
+            color: white;
+        }
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 23px;
+            font-size: 12px;
+
+        }
+        .login-btn {
+            width: 100%;
+            background-color: #2176FF;
+            color: white;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-btn:hover{
+            background: #03020e;
+        }
+        .signup-link {
+            margin-top: 15px;
+            font-size: 19px;
+        }
+        p{
+            margin-top: 19px;
+            color: #88878e;
+            font-size: 12px;
+        }
+        a{
+            color: #2176FF;
+            font-size: 12px;
+        }
+         footer {
+            padding: 12px;
+            margin-top: 123px;
+            background-color: #131B2E;
+        }
+    </style>
 </head>
 <body>
+    <div class="login-container">
+                <div class="logo">
+            <img src="logo.png" alt="">
+        </div>
+        <h2>Login</h2>
+        <div class="social-login">
+            <button class="social-btn"><i class="fab fa-google"></i>  Login with Google</button>
+            <button class="social-btn"><i class="fab fa-facebook"></i>Login with Facebook</button>
+        </div>
+        <p>---------OR USE YOUR EMAIL--------</p>
+        <div class="input-group">
+            
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <button class="login-btn">Login</button>
+        <p class="signup-link">Don't have an account? <a href="/signup">Sign up</a></p>
+    </div>
+        <footer>
+        <p>&copy; 2025 RefurbPDF. All rights reserved.</p>
+    </footer>
     
-
-    <h2>Login</h2>
-<form id="loginForm" action="/login" method="post" onsubmit="console.log('Login form submitted');">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" value="Login">
-</form>
-
-
-    <a href="/signup">Create new Account</a>
-
-
 </body>
-<script>
-   document.getElementById("loginForm").addEventListener("submit", async function(event) {
-    event.preventDefault(); 
-
-    const name = document.querySelector("input[name='name']").value;
-    const password = document.querySelector("input[name='password']").value;
-
-    const response = await fetch("/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, password }) 
-    });
-
-    if (response.ok) {
-        console.log("Login successful! Redirecting...");
-        window.location.href = "/profile";
-    } else {
-        const text = await response.text();
-        alert(text);
-    }
-});
-
-</script>
-
-
 </html>

@@ -1,25 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/css/signup.css">
-    <title>Document</title>
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+        }
+
+        body {
+            color: #fff;
+            background-color: #0A101A;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+            margin-left: -49%;
+        }
+
+        .logo img {
+            height: 77px;
+            margin-bottom: 10px;
+            color: #2176FF;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-btn {
+            background-color: #1E293B;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+             margin-top: 13px;
+        }
+
+        .social-btn i {
+            font-size: 16px;
+        }
+           .social-btn:hover{
+            background: #88878e;
+        }
+
+        .input-group {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #141921;
+            border: 1px solid #4d4c52;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .name-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .name-group .input-group {
+            flex: 1;
+        }
+
+        .input-group i {
+            color: white;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: none;
+            color: white;
+            outline: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            background-color: #2176FF;
+            color: white;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-btn:hover{
+            background: #03020e;
+
+        }
+          p{
+            margin-top: 16px;
+            color: #88878e;
+            font-size: 17px;
+        }
+           a{
+            color: #2176FF;
+            font-size: 12px;
+        }
+         
+
+        .login-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-    
-
-    <h2>Sign up</h2>
-
- <form action="/signup" method="post">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" value="Sign Up">
-</form>
-
-    
-
-
+    <div class="signup-container">
+        <div class="logo">
+            <img src="logo.png" alt="">
+        </div>
+        <h2>Create Account</h2>
+        <p>Start working with your PDF files today</p>
+        <div class="social-login">
+            <button class="social-btn"><i class="fab fa-google"></i> Sign up with Google</button>
+            <button class="social-btn"><i class="fab fa-facebook"></i> Sign up with Facebook</button>
+        </div>
+        <p>---------OR REGISTER WITH EMAIL--------</p>
+        <div class="name-group">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="First Name">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Confirm Password">
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox"> I agree to the <hr><hr><hr> <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </div>
+        <button class="signup-btn">Create Account</button>
+        <p class="login-link">Already have an account? <a href="#">Sign in</a></p>
+    </div>
+   
 </body>
+
 </html>

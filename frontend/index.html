@@ -3,62 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Arcade PDF Editor</title>
-    <link rel="stylesheet" href="/s1.css">
-    <script src="script.js" defer></script>
+    <title>Refurb PDF</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=picture_as_pdf" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/9a0f3165c5.js" crossorigin="anonymous"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace;
+        }
+        body {
+            justify-content: center;
+            color: #fff;
+            background-color: #0A101A;
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, #140c4e 1px, transparent 1px), linear-gradient(to bottom, #1b1068 1px, transparent 1px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px;
+            background-color: #131B2E;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 22px;
+        }
+        .btn {  
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            background: rgba(37, 99, 235, 1);
+            font-size: 22px;
+        }
+        .btn:hover{
+            background-color: #0a0f1a;
+        }
+        .login { background-color: #2176FF; }
+        .signup { background-color: #3B82F6; }
+        .container {
+            margin: 63px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .main-box {
+            display: flex;
+            flex-direction: column;
+            background-color: #1F283C;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .drag-drop-section {
+            background-color: #111827;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 78%;
+            border: 1px solid #3B82F6;
+        }
+        .upload-box {
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px dashed #545E6F;
+            text-align: center;
+            height: 328px;
+
+        }
+        .upload-box p{
+            margin-top: 88px;
+            font-size: 24px;
+        }
+    
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 44px;
+            line-height: 3;
+            letter-spacing: normal;
+            text-transform: none;
+            display: flex;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -moz-osx-font-smoothing: grayscale;
+            height: 6px;
+            margin-left: 301px;
+            margin-top: 25px;
+
+}
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 17px;
+        }
+        .btn select{
+            color: #0a0f1a;
+        }
+        .tool-btn{
+            background-color: #111827;
+            color: white;
+            padding: 10px 20px;
+            margin: -6px;
+            margin-right: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 167px;
+            height: 88px;
+            border: 2px dashed #3B82F6;
+            font-size: 21px;
+            
+         }
+         .tool-btn:hover{
+            background-color: #3B82F6;
+         }
+        .feature-btn {
+            background-color: #0A101A;
+            color: white;
+            padding: 10px 20px;
+            margin: 3px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 309px;
+            height: 75px;
+            font-size: 27px;
+           
+        }
+        .feature-btn:hover{
+           background-color: #9c9ba825;
+        }
+        .feature-buttons {
+            display: flex;
+            margin-top: 11px;
+            
+            
+        }
+        .toolkit h2 {
+            margin: 74px 0;
+            font-size: 60px;
+            margin-left: 558px;
+        }
+        .tool-options {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+        .tool-card {
+            background-color: #1E293B;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 361px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-right: 3px solid #3B82F6;
+            border-bottom: 3px solid #3B82F6;
+            height: 188px;
+        }
+        .tool-card:hover{
+            background-color: #f2f2f322;
+        }
+        .tool-card h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .tool-card p {
+            font-size: 19px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #131B2E;
+        }
+         .logo img{
+            width: 77px;
+            height: 71px;
+            margin-right: 36px;
+}
+    </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="RefurbPDF Logo" class="logo">
-        <h1>RefurbPDF</h1>
-        
-            <a href="http://localhost:3000/login" class="login-btn">Login/Signup</a>
-            <a href="http://localhost:3000/profile" class="profile-btn">👤Profile</a>
-            
-            
-       
-    </header>
-
-    <div class="upload-section">
-        <div class="upload-area" id="uploadArea">
-            <p>Drag & Drop PDF Here <br> <br> or <br><br>Click to Upload</p>
-            <input type="file" id="fileInput" accept="application/pdf">
+    <nav class="navbar">
+        <div class="logo"><img src="logo.png" alt="" srcset=""></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <button class="btn login">Login</button>
+            <button class="btn signup">Sign Up</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="main-box">
+            <div class="top-section">
+                
+                <div class="drag-drop-section">
+                    <div class="upload-box">
+                        <div class="upload-area">
+                            <span class="material-symbols-outlined">
+                                picture_as_pdf
+                                </span>
+                            <p>Drag & Drop PDF Here<br>or Click to Upload</p>
+                            <button class="btn select">Select PDF</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    
+                    <button class="tool-btn">Rotate <br><i style="font-size:24px" class="fa">&#xf01e;</i></button>
+                    <button class="tool-btn">Crop <br><i style="font-size:24px" class="fa">&#xf125;</i></button>
+                    <button class="tool-btn">Merge <br><i class="fa-solid fa-object-group"></i></button>
+                    <button class="tool-btn">Split <br><i class="fa-solid fa-table-columns"></i></button>
+                </div>
+            </div>
+            <div class="feature-buttons">
+                <button class="feature-btn">Edit Text</button>
+                <button class="feature-btn">OCR (Scan Text)</button>
+                <button class="feature-btn">Watermark</button>
+            </div>
         </div>
     </div>
-
-    <!-- Left Side Buttons -->
-    <div class="tool-panel left">
-        <div class="tool-btn" onclick="rotatePDF()">Rotate</div>
-        <div class="tool-btn" onclick="cropPDF()">Crop</div>
-        <div class="tool-btn" onclick="mergePDF()">Merge</div>
-        <div class="tool-btn" onclick="splitPDF()">Split</div>
-        <div class="tool-btn" onclick="compressPDF()">Compress</div>
-    </div>
-
-    <!-- Right Side Buttons -->
-    <div class="tool-panel right">
-        <div class="tool-btn" onclick="extractText()">Extract Text</div>
-        <div class="tool-btn" onclick="addWatermark()">Watermark</div>
-        <div class="tool-btn" onclick="convertToWord()">Convert to Word</div>
-        <div class="tool-btn" onclick="convertToImage()">Convert to Image</div>
-        <div class="tool-btn" onclick="performOCR()">OCR (Scan Text)</div>
-    </div>
-
-    <div class="tools">
-        <div class="tp">
-            <button class="arcade-btn" id="upload-btn"><img src="cslot1.png" alt="Insert File"> </button>
-            <button class="arcade-btn">▶️ Continue <br><br>(Edit)</button>
-            <button class="arcade-btn">💾 Save Progress <br><br> (Export)</button>
-            <button class="arcade-btn">🛑 Game Over <br><br> (Exit)</button>
+    <section class="toolkit">
+        <h2>PDF Editing Toolkit</h2>
+        <div class="tool-options">
+            <div class="tool-card">
+                <h3> <i class="fa-solid fa-file-word"></i><br>Convert PDF to WORD</h3>
+                <p>Easily transform PDF pages to documents.</p>
+            </div>
+            <div class="tool-card">
+                <h3><i class="fa-solid fa-file-image"></i><br>Convert PDF to Image</h3>
+                <p>Convert PDF files to images with precision.</p>
+            </div>
+            <div class="tool-card">
+                <h3><i class="fa-solid fa-file-zipper"></i><br>Compress PDF</h3>
+                <p>Reduce file size without losing quality.</p>
+            </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <a href="help.html">Help</a>
-        <a href="tc.html">Terms and Conditions</a>
-        <a href="pp.html">Privacy Policy</a>
-        <a href="about.html">About Us</a>
-    </div>
-
+    </section>
+    <footer>
+        <p>&copy; 2025 RefurbPDF. All rights reserved.</p>
+    </footer>
 </body>
 </html>

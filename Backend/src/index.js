@@ -9,7 +9,28 @@ const pdfCollection = require("./pdfModel");
 const cors = require("cors");
 const { truncate } = require("fs");
 const templatePath = path.join(__dirname, '../templates');
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+
+app.use(
+    cors({
+      origin: "http://127.0.0.1:5000", 
+      methods: "GET,POST,PUT,DELETE",
+      allowedHeaders: ["Content-Type", "Authorization"], 
+      credentials: true,
+    })
+  );
+  
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+app.post("/api/file/upload", (req, res) => {
+    console.log("File upload request received");
+    res.json({ message: "File uploaded successfully!" });
+});
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,19 +52,17 @@ app.set("views", templatePath);
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use(express.static(path.join(__dirname, "../../frontend")));
-
-
 
 app.get("/login", (req, res) => {
-    res.render("login"); 
+    res.render("login");
 });
-
-
-
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
+
+app.use(express.static(path.join(__dirname, "../../frontend")));
+
+
 
 app.post("/login", async (req, res) => {
     try {
@@ -166,10 +185,15 @@ app.delete("/delete-pdf/:id", async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
-});
+
 app.post("/test", (req, res) => {
     console.log("Test request received:", req.body);
     res.json({ receivedBody: req.body });
 });
+
+app.listen(5000, () => {
+    console.log("Server running on http://localhost:5000");
+});
+
+
+
